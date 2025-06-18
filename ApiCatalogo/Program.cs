@@ -1,4 +1,5 @@
 using ApiCatalogo.Infra;
+using ApiCatalogo.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -17,6 +18,8 @@ builder.Services.AddSwaggerGen();
 // Configuração do DbContext para SQL server
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
 
 var app = builder.Build();
