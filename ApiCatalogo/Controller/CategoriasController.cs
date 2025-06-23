@@ -40,7 +40,7 @@ public class CategoriasController : ControllerBase
         {
 
             return StatusCode(StatusCodes.Status500InternalServerError,
-                    "Ocorreu um problema ao tratar a sua solicitação.");
+                    "Ocorreu um problema ao tratar a sua solicitação");
         }
       
     }
